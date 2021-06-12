@@ -1,0 +1,23 @@
+extends layout
+block content
+    div.container
+        h1 Add a product to shop
+        form(method='POST', action='/admin/add')
+            #form-group
+                label Product title:
+                input.form-control(name='product_title', type='text' autocomplete='off')
+            #form-group
+                label Product price:
+                input.form-control(name='product_price', type='number' autocomplete='off')
+            #form-group
+                label Product description:
+                textarea.form-control(name='product_description', type='text' autocomplete='off')
+            #form-group
+                label(class='my-1 mr-2' for="product_category") Product category:
+                select(class='form-control my-1 mr-sm-2' id='product_category' name='product_category')
+                    option(selected)='Choose a category...'
+                    each category in categories
+                        option(value=category.category_name)=category.category_name
+            br
+            input.button(type='submit', value='Add category', style='margin: 0 !important;')
+    div

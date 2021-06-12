@@ -1,0 +1,33 @@
+extends layout
+block content
+    div.container.products__container#results
+        div.filter__container
+            input.form-control.ds-input(style='max-width: 350px;' class='search' placeholder='Search')
+            button(class='sort button' data-sort="name")='Sort by name'
+            button(class='sort button' data-sort="price")='Sort by price'
+            button(class='sort button' data-sort="category")='Sort by category'
+            div
+        div.list
+            each product in products
+                div#make-3D-space
+                    div#product-card.product__card(data-id=product._id)
+                        div#product-front
+                            div.shadow
+                            img(style='width: 100%;' src="https://via.placeholder.com/325x430/e3e0e0/393c45/?text=#{product.product_title}" alt=product.product_title)
+                            div.image_overlay
+                            div#view_details='View details'
+                            div.stats
+                                div.stats-container
+                                    span.product_price.price='$' + product.product_price
+                                    span.product_name.name=product.product_title
+                                    div.product-options
+                                        strong='Category'
+                                        span.category=product.product_category
+                                        div
+
+                            div#product-back
+                                div.shadow
+                        div
+                div
+            div
+    div

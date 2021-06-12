@@ -1,0 +1,14 @@
+extends layout
+block content
+    div.container
+        h1 Login
+        form(method='POST', action='/users/login')
+            #form-group
+                label Username:
+                input.form-control(name='username', type='text' autocomplete='off')
+            #form-group
+                label Password:
+                input.form-control(name='password', type='password' autocomplete='off')
+            br
+            input.button(type='submit', value='Login', style='margin: 0 !important;')
+    div

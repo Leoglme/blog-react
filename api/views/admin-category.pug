@@ -1,0 +1,11 @@
+extends layout
+block content
+    div.container
+        h1 Add a product category
+        form(method='POST', action='/admin/add/category')
+            #form-group
+                label Category Name:
+                input.form-control(name='category_name', type='text' autocomplete='off')
+            br
+            input.button(type='submit', value='Add category', style='margin: 0 !important;')
+    div

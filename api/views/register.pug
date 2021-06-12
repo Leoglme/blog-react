@@ -1,0 +1,23 @@
+extends layout
+block content
+    div.container
+        h1 Register
+        form(method='POST', action='/users/register')
+            #form-group
+                label Name:
+                input.form-control(name='name', type='text' autocomplete='off')
+            #form-group
+                label Email:
+                input.form-control(name='email', type='text' autocomplete='off')
+            #form-group
+                label Username:
+                input.form-control(name='username', type='text' autocomplete='off')
+            #form-group
+                label Password:
+                input.form-control(name='password', type='password' autocomplete='off')
+            #form-group
+                label Confirm:
+                input.form-control(name='password2', type='password' autocomplete='off')
+            br
+            input.button(type='submit', value='Register', style='margin: 0 !important;')
+    div
